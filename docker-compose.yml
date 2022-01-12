@@ -27,6 +27,8 @@ services:
     image: grafana/grafana:8.3.3
     ports:
       - "3000:3000"
+    volumes:
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
     networks:
       - ml-elec
     depends_on:
