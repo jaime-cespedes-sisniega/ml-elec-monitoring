@@ -25,6 +25,7 @@
   "liveNow": false,
   "panels": [
     {
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -101,7 +102,7 @@
           "exemplar": true,
           "expr": "histogram_quantile(0.95, sum(rate(vicprice_distribution_bucket[5m])) by (le))",
           "interval": "",
-          "legendFormat": "0.95th",
+          "legendFormat": "95th",
           "refId": "A"
         },
         {
@@ -113,7 +114,7 @@
           "expr": "histogram_quantile(0.99, sum(rate(vicprice_distribution_bucket[5m])) by (le))",
           "hide": false,
           "interval": "",
-          "legendFormat": "0.99th",
+          "legendFormat": "99th",
           "refId": "B"
         },
         {
@@ -141,10 +142,11 @@
           "refId": "D"
         }
       ],
-      "title": "vicprice - percentile",
+      "title": "vicprice - Percentiles",
       "type": "timeseries"
     },
     {
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -221,7 +223,7 @@
           "exemplar": true,
           "expr": "histogram_quantile(0.95, sum(rate(nswdemand_distribution_bucket[5m])) by (le))",
           "interval": "",
-          "legendFormat": "0.95th",
+          "legendFormat": "95th",
           "refId": "A"
         },
         {
@@ -233,7 +235,7 @@
           "expr": "histogram_quantile(0.99, sum(rate(nswdemand_distribution_bucket[5m])) by (le))",
           "hide": false,
           "interval": "",
-          "legendFormat": "0.99th",
+          "legendFormat": "99th",
           "refId": "B"
         },
         {
@@ -261,7 +263,7 @@
           "refId": "D"
         }
       ],
-      "title": "nswdemand - percentile",
+      "title": "nswdemand - Percentiles",
       "type": "timeseries"
     },
     {
@@ -423,7 +425,7 @@
     "list": []
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
