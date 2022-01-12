@@ -115,6 +115,30 @@
           "interval": "",
           "legendFormat": "0.99th",
           "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.5, sum(rate(vicprice_distribution_bucket[5m])) by (le))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "50th",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.25, sum(rate(vicprice_distribution_bucket[5m])) by (le))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "25th",
+          "refId": "D"
         }
       ],
       "title": "vicprice - percentile",
@@ -211,6 +235,30 @@
           "interval": "",
           "legendFormat": "0.99th",
           "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.5, sum(rate(nswdemand_distribution_bucket[5m])) by (le))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "50th",
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "exemplar": true,
+          "expr": "histogram_quantile(0.25, sum(rate(nswdemand_distribution_bucket[5m])) by (le))",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "25th",
+          "refId": "D"
         }
       ],
       "title": "nswdemand - percentile",
@@ -367,7 +415,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "10s",
+  "refresh": "5s",
   "schemaVersion": 34,
   "style": "dark",
   "tags": [],
