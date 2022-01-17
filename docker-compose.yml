@@ -10,7 +10,7 @@ services:
       - env-model.env
       - env-mongodb.env
     environment:
-      - NUM_WORKERS=5
+      NUM_WORKERS: 5
 
   prometheus:
     image: prom/prometheus:v2.32.1
@@ -31,6 +31,8 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     networks:
       - ml-elec
+    env_file:
+      - env-grafana.env
     depends_on:
       - prometheus
 
