@@ -13,3 +13,11 @@ scrape_configs:
         port: 5000
         type: A
         refresh_interval: 5s
+
+  - job_name: drift-detection
+    metrics_path: /metrics
+    dns_sd_configs:
+      - names: ["drift-detection"]
+        port: 5001
+        type: A
+        refresh_interval: 5s
